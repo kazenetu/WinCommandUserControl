@@ -16,6 +16,8 @@ Public Class CommandButtons
     End Sub
 #End Region
 
+#Region "プロパティ"
+
 #Region "Command.ESC"
     <Category("Command.ESC"), Description("ボタンのテキストの取得・設定")>
     Public Property ESCText As String
@@ -67,6 +69,8 @@ Public Class CommandButtons
         End Get
     End Property
 
+
+#End Region
 
 #End Region
 
