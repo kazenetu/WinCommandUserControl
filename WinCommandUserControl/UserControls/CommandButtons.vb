@@ -14,6 +14,38 @@ Public Class CommandButtons
         ' TODO パラメータによってKindsを切り替える
         RaiseEvent CommandButtonClickEvent(Kinds.ESC)
     End Sub
+
+    ''' <summary>
+    ''' キー入力イベント
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Public Sub CommandButtonKeyDown(sender As Object, e As KeyEventArgs)
+        Dim targetKey = {Keys.Escape, Keys.F1, Keys.F2, Keys.F3, Keys.F4, Keys.F5, Keys.F6, Keys.F7, Keys.F8, Keys.F9, Keys.F10, Keys.F11, Keys.F12}
+
+        ' TODO パラメータによってKindsを切り替える
+        Select Case e.KeyCode
+            Case Keys.Escape
+                ClickEvent(cbESC)
+                e.SuppressKeyPress = True
+                Return
+        End Select
+    End Sub
+
+    ''' <summary>
+    ''' ページロード
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    Private Sub CommandButtons_Load(sender As Object, e As EventArgs) Handles Me.Load
+        If DesignMode Then
+            Return
+        End If
+
+        If ParentForm IsNot Nothing Then
+            AddHandler ParentForm.KeyDown, AddressOf CommandButtonKeyDown
+        End If
+    End Sub
 #End Region
 
 #Region "プロパティ"

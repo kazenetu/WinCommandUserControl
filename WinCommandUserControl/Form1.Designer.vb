@@ -28,6 +28,8 @@ Partial Class Form1
         'CommandButtons1
         '
         Me.CommandButtons1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.CommandButtons1.ESCEnabled = True
+        Me.CommandButtons1.ESCLabelText = "Label1"
         Me.CommandButtons1.ESCLabelVisible = True
         Me.CommandButtons1.ESCText = "aaaa"
         Me.CommandButtons1.ESCVisible = True
@@ -42,6 +44,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(947, 261)
         Me.Controls.Add(Me.CommandButtons1)
+        Me.KeyPreview = True
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
