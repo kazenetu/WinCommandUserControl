@@ -28,7 +28,6 @@ Partial Class Form1
         'CommandButtons1
         '
         Me.CommandButtons1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.CommandButtons1.ESCLabel = "ESC"
         Me.CommandButtons1.ESCLabelVisible = True
         Me.CommandButtons1.ESCText = "aaaa"
         Me.CommandButtons1.ESCVisible = True
