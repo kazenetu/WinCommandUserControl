@@ -2,17 +2,65 @@
 
 Public Class CommandButtons
 
-    Public Enum Kinds
-        ESC
+    Public Enum Kinds As Integer
+        NONE = -1
+        ESC = 0
+        F1
+        F2
+        F3
+        F4
+        F5
+        F6
+        F7
+        F8
+        F9
+        F10
+        F11
+        F12
     End Enum
 
 #Region "イベント"
     Public Event CommandButtonClickEvent(kind As Kinds)
 
-    Public Sub ClickEvent(sender As CommandButton) Handles cbESC.ClickEvent
+    ''' <summary>
+    ''' ボタンコントロールのクリックイベント
+    ''' </summary>
+    ''' <param name="sender"></param>
+    Public Sub ClickEvent(sender As CommandButton)
 
-        ' TODO パラメータによってKindsを切り替える
-        RaiseEvent CommandButtonClickEvent(Kinds.ESC)
+        Dim kind = Kinds.NONE
+        Select Case sender.Name
+            Case cbESC.Name
+                kind = Kinds.ESC
+            Case cbF1.Name
+                kind = Kinds.F1
+            Case cbF2.Name
+                kind = Kinds.F2
+            Case cbF3.Name
+                kind = Kinds.F3
+            Case cbF4.Name
+                kind = Kinds.F4
+            Case cbF5.Name
+                kind = Kinds.F5
+            Case cbF6.Name
+                kind = Kinds.F6
+            Case cbF7.Name
+                kind = Kinds.F7
+            Case cbF8.Name
+                kind = Kinds.F8
+            Case cbF9.Name
+                kind = Kinds.F9
+            Case cbF10.Name
+                kind = Kinds.F10
+            Case cbF11.Name
+                kind = Kinds.F11
+            Case cbF12.Name
+                kind = Kinds.F12
+        End Select
+
+        If kind <> Kinds.NONE Then
+            RaiseEvent CommandButtonClickEvent(kind)
+        End If
     End Sub
 
     ''' <summary>
@@ -23,10 +71,57 @@ Public Class CommandButtons
     Public Sub CommandButtonKeyDown(sender As Object, e As KeyEventArgs)
         Dim targetKey = {Keys.Escape, Keys.F1, Keys.F2, Keys.F3, Keys.F4, Keys.F5, Keys.F6, Keys.F7, Keys.F8, Keys.F9, Keys.F10, Keys.F11, Keys.F12}
 
-        ' TODO パラメータによってKindsを切り替える
         Select Case e.KeyCode
             Case Keys.Escape
                 ClickEvent(cbESC)
+                e.SuppressKeyPress = True
+                Return
+            Case Keys.F1
+                ClickEvent(cbF1)
+                e.SuppressKeyPress = True
+                Return
+            Case Keys.F2
+                ClickEvent(cbF2)
+                e.SuppressKeyPress = True
+                Return
+            Case Keys.F3
+                ClickEvent(cbF3)
+                e.SuppressKeyPress = True
+                Return
+            Case Keys.F4
+                ClickEvent(cbF4)
+                e.SuppressKeyPress = True
+                Return
+            Case Keys.F5
+                ClickEvent(cbF5)
+                e.SuppressKeyPress = True
+                Return
+            Case Keys.F6
+                ClickEvent(cbF6)
+                e.SuppressKeyPress = True
+                Return
+            Case Keys.F7
+                ClickEvent(cbF7)
+                e.SuppressKeyPress = True
+                Return
+            Case Keys.F8
+                ClickEvent(cbF8)
+                e.SuppressKeyPress = True
+                Return
+            Case Keys.F9
+                ClickEvent(cbF9)
+                e.SuppressKeyPress = True
+                Return
+            Case Keys.F10
+                ClickEvent(cbF10)
+                e.SuppressKeyPress = True
+                Return
+            Case Keys.F11
+                ClickEvent(cbF11)
+                e.SuppressKeyPress = True
+                Return
+            Case Keys.F12
+                ClickEvent(cbF12)
                 e.SuppressKeyPress = True
                 Return
         End Select
@@ -42,6 +137,22 @@ Public Class CommandButtons
             Return
         End If
 
+        ' クリックイベント設定
+        AddHandler cbESC.ClickEvent, AddressOf ClickEvent
+        AddHandler cbF1.ClickEvent, AddressOf ClickEvent
+        AddHandler cbF2.ClickEvent, AddressOf ClickEvent
+        AddHandler cbF3.ClickEvent, AddressOf ClickEvent
+        AddHandler cbF4.ClickEvent, AddressOf ClickEvent
+        AddHandler cbF5.ClickEvent, AddressOf ClickEvent
+        AddHandler cbF6.ClickEvent, AddressOf ClickEvent
+        AddHandler cbF7.ClickEvent, AddressOf ClickEvent
+        AddHandler cbF8.ClickEvent, AddressOf ClickEvent
+        AddHandler cbF9.ClickEvent, AddressOf ClickEvent
+        AddHandler cbF10.ClickEvent, AddressOf ClickEvent
+        AddHandler cbF11.ClickEvent, AddressOf ClickEvent
+        AddHandler cbF12.ClickEvent, AddressOf ClickEvent
+
+        ' キー入力イベント設定
         If ParentForm IsNot Nothing Then
             AddHandler ParentForm.KeyDown, AddressOf CommandButtonKeyDown
         End If
