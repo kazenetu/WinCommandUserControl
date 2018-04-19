@@ -33,7 +33,6 @@ Partial Class CommandButton
         Me.btnCommand.Name = "btnCommand"
         Me.btnCommand.Size = New System.Drawing.Size(65, 35)
         Me.btnCommand.TabIndex = 0
-        Me.btnCommand.Text = "ああ" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "いい"
         Me.btnCommand.UseVisualStyleBackColor = True
         '
         'lblCommand
