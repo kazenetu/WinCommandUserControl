@@ -33,7 +33,7 @@ Public Class CommandButton
 
 #End Region
 
-#Region "イベント"
+#Region "発行イベント"
 
     ''' <summary>
     ''' ボタンクリックイベント
@@ -43,17 +43,7 @@ Public Class CommandButton
 
 #End Region
 
-    ''' <summary>
-    ''' ロード
-    ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
-    Private Sub CommandButton_Load(sender As Object, e As EventArgs) Handles Me.Load
-
-        ' ラベルの位置合わせを行う
-        lblCommand.Left = btnCommand.Left + (btnCommand.Width - lblCommand.Width) / 2
-
-    End Sub
+#Region "イベント"
 
     ''' <summary>
     ''' ボタンクリック
@@ -63,4 +53,7 @@ Public Class CommandButton
     Private Sub ButtonClick(sender As Object, e As EventArgs) Handles btnCommand.Click
         RaiseEvent ClickEvent(Me)
     End Sub
+
+#End Region
+
 End Class

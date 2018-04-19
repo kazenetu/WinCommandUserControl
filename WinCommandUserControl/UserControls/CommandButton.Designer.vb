@@ -37,12 +37,13 @@ Partial Class CommandButton
         '
         'lblCommand
         '
-        Me.lblCommand.AutoSize = True
-        Me.lblCommand.Location = New System.Drawing.Point(22, 4)
+        Me.lblCommand.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.lblCommand.Location = New System.Drawing.Point(0, 4)
         Me.lblCommand.Name = "lblCommand"
-        Me.lblCommand.Size = New System.Drawing.Size(38, 12)
+        Me.lblCommand.Size = New System.Drawing.Size(65, 12)
         Me.lblCommand.TabIndex = 1
         Me.lblCommand.Text = "Label1"
+        Me.lblCommand.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'CommandButton
         '
@@ -53,7 +54,6 @@ Partial Class CommandButton
         Me.Name = "CommandButton"
         Me.Size = New System.Drawing.Size(65, 56)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
