@@ -22,13 +22,72 @@ Public Class CommandButtons
         F12
     End Enum
 
-#Region "イベント"
+#Region "コンストラクタ"
+
+    ''' <summary>
+    ''' コンストラクタ
+    ''' </summary>
+    Public Sub New()
+
+        ' この呼び出しはデザイナーで必要です。
+        InitializeComponent()
+
+        ' ラベルテキストの初期値設定
+        For Each child As Control In pnlCommand.Controls
+            If TypeOf child Is CommandButton Then
+                Dim targetCommandButton = DirectCast(child, CommandButton)
+                targetCommandButton.CommandLabel.Text = targetCommandButton.Name.Replace("cb", String.Empty)
+            End If
+        Next
+
+        ' ボタンコントロールの位置設定
+        Dim left = pnlCommand.Left + 5
+        Dim top = cbESC.Top
+        setButtonPosition(cbESC, left, top)
+        setButtonPosition(cbF1, left, top)
+        setButtonPosition(cbF2, left, top)
+        setButtonPosition(cbF3, left, top)
+        setButtonPosition(cbF4, left, top)
+        setButtonPosition(cbF5, left, top)
+        setButtonPosition(cbF6, left, top)
+        setButtonPosition(cbF7, left, top)
+        setButtonPosition(cbF8, left, top)
+        setButtonPosition(cbF9, left, top)
+        setButtonPosition(cbF10, left, top)
+        setButtonPosition(cbF11, left, top)
+        setButtonPosition(cbF12, left, top)
+
+    End Sub
+
+    ''' <summary>
+    ''' コマンドボタンの位置設定
+    ''' </summary>
+    ''' <param name="targetButton">コマンドボタンインスタンス</param>
+    ''' <param name="left">左位置</param>
+    ''' <param name="top">上位置</param>
+    Private Sub setButtonPosition(ByRef targetButton As CommandButton, ByRef left As Integer, ByVal top As Integer)
+
+        ' コマンドボタンの位置設定
+        targetButton.Left = left
+        targetButton.Top = top
+
+        ' leftの更新
+        left += targetButton.Width + 5
+
+    End Sub
+
+#End Region
+
+#Region "発行イベント"
 
     ''' <summary>
     ''' ボタンクリックイベント
     ''' </summary>
     ''' <param name="kind"></param>
     Public Event CommandButtonClickEvent(kind As Kinds)
+#End Region
+
+#Region "イベント"
 
     ''' <summary>
     ''' ボタンコントロールのクリック
