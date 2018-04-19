@@ -162,18 +162,18 @@ Partial Class CommandButtons
         Me.ResumeLayout(False)
 
     End Sub
-    Public WithEvents cbF5 As CommandButton
-    Public WithEvents cbF4 As CommandButton
-    Public WithEvents cbF3 As CommandButton
-    Public WithEvents cbF2 As CommandButton
-    Public WithEvents cbF1 As CommandButton
-    Public WithEvents cbF6 As CommandButton
-    Public WithEvents cbF7 As CommandButton
-    Public WithEvents cbF8 As CommandButton
-    Public WithEvents cbF9 As CommandButton
-    Public WithEvents cbF10 As CommandButton
-    Public WithEvents cbF11 As CommandButton
-    Public WithEvents cbF12 As CommandButton
-    Public WithEvents pnlCommand As Panel
     Private WithEvents cbESC As CommandButton
+    Private WithEvents cbF5 As CommandButton
+    Private WithEvents cbF4 As CommandButton
+    Private WithEvents cbF3 As CommandButton
+    Private WithEvents cbF2 As CommandButton
+    Private WithEvents cbF1 As CommandButton
+    Private WithEvents cbF6 As CommandButton
+    Private WithEvents cbF7 As CommandButton
+    Private WithEvents cbF8 As CommandButton
+    Private WithEvents cbF9 As CommandButton
+    Private WithEvents cbF10 As CommandButton
+    Private WithEvents cbF11 As CommandButton
+    Private WithEvents cbF12 As CommandButton
+    Private WithEvents pnlCommand As Panel
 End Class
