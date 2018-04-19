@@ -172,6 +172,11 @@ Public Class CommandButtons
 #Region "プロパティ"
 
 #Region "Command.ESC"
+
+    ''' <summary>
+    ''' ボタンテキストの取得・設定
+    ''' </summary>
+    ''' <returns>ボタンテキスト</returns>
     <Category("Command.ESC"), Description("ボタンのテキストの取得・設定")>
     Public Property ESCText As String
         Set(value As String)
@@ -182,6 +187,10 @@ Public Class CommandButtons
         End Get
     End Property
 
+    ''' <summary>
+    ''' ラベルテキストの取得・設定
+    ''' </summary>
+    ''' <returns>ラベルテキスト</returns>
     <Category("Command.ESC"), Description("ラベルのテキストの取得・設定")>
     Public Property ESCLabelText As String
         Set(value As String)
@@ -192,6 +201,10 @@ Public Class CommandButtons
         End Get
     End Property
 
+    ''' <summary>
+    ''' ボタン表示状態の取得・設定
+    ''' </summary>
+    ''' <returns>ボタンの表示状態</returns>
     <Category("Command.ESC"), Description("ボタンの表示状態の取得・設定")>
     Public Property ESCVisible As Boolean
         Set(value As Boolean)
@@ -202,6 +215,10 @@ Public Class CommandButtons
         End Get
     End Property
 
+    ''' <summary>
+    ''' ラベル表示状態の取得・設定
+    ''' </summary>
+    ''' <returns>ラベルの表示状態</returns>
     <Category("Command.ESC"), Description("ラベルの表示状態の取得・設定")>
     Public Property ESCLabelVisible As Boolean
         Set(value As Boolean)
@@ -212,7 +229,11 @@ Public Class CommandButtons
         End Get
     End Property
 
-    <Category("Command.ESC"), Description("ボタンの無効状態の取得・設定")>
+    ''' <summary>
+    ''' ボタン有効/無効状態の取得・設定
+    ''' </summary>
+    ''' <returns>ボタンの有効/無効状態</returns>
+    <Category("Command.ESC"), Description("ボタンの有効/無効状態の取得・設定")>
     Public Property ESCEnabled As Boolean
         Set(value As Boolean)
             cbESC.btnCommand.Enabled = value
