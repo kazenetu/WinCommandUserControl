@@ -2,6 +2,9 @@
 
 Public Class CommandButtons
 
+    ''' <summary>
+    ''' ボタン種別
+    ''' </summary>
     Public Enum Kinds As Integer
         NONE = -1
         ESC = 0
@@ -20,10 +23,15 @@ Public Class CommandButtons
     End Enum
 
 #Region "イベント"
+
+    ''' <summary>
+    ''' ボタンクリックイベント
+    ''' </summary>
+    ''' <param name="kind"></param>
     Public Event CommandButtonClickEvent(kind As Kinds)
 
     ''' <summary>
-    ''' ボタンコントロールのクリックイベント
+    ''' ボタンコントロールのクリック
     ''' </summary>
     ''' <param name="sender"></param>
     Public Sub ClickEvent(sender As CommandButton)
@@ -58,19 +66,21 @@ Public Class CommandButtons
                 kind = Kinds.F12
         End Select
 
+        ' ESC・F1～12の場合はクリックイベント発行
         If kind <> Kinds.NONE Then
             RaiseEvent CommandButtonClickEvent(kind)
         End If
     End Sub
 
     ''' <summary>
-    ''' キー入力イベント
+    ''' キー入力
     ''' </summary>
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
     Public Sub CommandButtonKeyDown(sender As Object, e As KeyEventArgs)
-        Dim targetKey = {Keys.Escape, Keys.F1, Keys.F2, Keys.F3, Keys.F4, Keys.F5, Keys.F6, Keys.F7, Keys.F8, Keys.F9, Keys.F10, Keys.F11, Keys.F12}
 
+
+        ' ESC・F1～12の場合はクリックメソッド呼び出し
         Select Case e.KeyCode
             Case Keys.Escape
                 ClickEvent(cbESC)

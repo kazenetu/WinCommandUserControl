@@ -7,6 +7,10 @@ Public Class CommandButton
 
 #Region "プロパティ"
 
+    ''' <summary>
+    ''' コマンドボタン
+    ''' </summary>
+    ''' <returns>ボタンインスタンス</returns>
     <Category("コマンド情報")>
     <Description("ボタン")>
     Public ReadOnly Property CommandButton As Button
@@ -15,6 +19,10 @@ Public Class CommandButton
         End Get
     End Property
 
+    ''' <summary>
+    ''' ラベル
+    ''' </summary>
+    ''' <returns>ラベルインスタンス</returns>
     <Category("コマンド情報")>
     <Description("ラベル")>
     Public ReadOnly Property CommandLabel As Label
@@ -27,6 +35,10 @@ Public Class CommandButton
 
 #Region "イベント"
 
+    ''' <summary>
+    ''' ボタンクリックイベント
+    ''' </summary>
+    ''' <param name="sender">ボタンインスタンス</param>
     Public Event ClickEvent(sender As CommandButton)
 
 #End Region
@@ -43,6 +55,11 @@ Public Class CommandButton
 
     End Sub
 
+    ''' <summary>
+    ''' ボタンクリック
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub ButtonClick(sender As Object, e As EventArgs) Handles btnCommand.Click
         RaiseEvent ClickEvent(Me)
     End Sub
