@@ -16,5 +16,10 @@ namespace WinCommandUserControlCS
         {
             InitializeComponent();
         }
+
+        private void commandButtons1_CommandButtonClickEvent(object sender, UserControls.CommandButtons.CommandUCArgs e)
+        {
+            MessageBox.Show(string.Format("{0}, {1}",e.TargetKind.ToString(),e.Target.Name.ToString()));
+        }
     }
 }

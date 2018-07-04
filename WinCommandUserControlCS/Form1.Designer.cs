@@ -28,12 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.commandButtons1 = new WinCommandUserControlCS.UserControls.CommandButtons();
+            this.SuspendLayout();
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(320, 39);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 19);
+            this.textBox1.TabIndex = 1;
+            // 
+            // commandButtons1
+            // 
+            this.commandButtons1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.commandButtons1.Location = new System.Drawing.Point(0, 188);
+            this.commandButtons1.Name = "commandButtons1";
+            this.commandButtons1.Size = new System.Drawing.Size(926, 68);
+            this.commandButtons1.TabIndex = 0;
+            this.commandButtons1.CommandButtonClickEvent += new WinCommandUserControlCS.UserControls.CommandButtons.CommandButtonClickHandler(this.commandButtons1_CommandButtonClickEvent);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(926, 256);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.commandButtons1);
+            this.KeyPreview = true;
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private UserControls.CommandButtons commandButtons1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
