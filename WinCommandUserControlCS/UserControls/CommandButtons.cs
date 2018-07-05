@@ -194,6 +194,8 @@ namespace WinCommandUserControlCS.UserControls
 
         #endregion
 
+        #region 関連クラス
+
         /// <summary>
         /// ボタンコントロールを含めたイベントデータ
         /// </summary>
@@ -220,5 +222,8 @@ namespace WinCommandUserControlCS.UserControls
             /// </summary>
             public Kind TargetKind { get; }
         }
+        
+        #endregion
+
     }
 }
