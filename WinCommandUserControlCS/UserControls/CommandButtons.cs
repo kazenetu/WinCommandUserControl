@@ -43,8 +43,16 @@ namespace WinCommandUserControlCS.UserControls
 
         #region 発行イベント
 
+        /// <summary>
+        /// ボタンクリックハンドラー
+        /// </summary>
+        /// <param name="sender">本ユーザーコントロール</param>
+        /// <param name="e">ボタンコントロールとボタン種別</param>
         public delegate void CommandButtonClickHandler(object sender, CommandUCArgs e);
 
+        /// <summary>
+        /// ボタンコントロールクリックイベント
+        /// </summary>
         public event CommandButtonClickHandler CommandButtonClickEvent;
 
         #endregion
@@ -186,15 +194,30 @@ namespace WinCommandUserControlCS.UserControls
 
         #endregion
 
+        /// <summary>
+        /// ボタンコントロールを含めたイベントデータ
+        /// </summary>
         public class CommandUCArgs : EventArgs
         {
+            /// <summary>
+            /// コンストラクタ
+            /// </summary>
+            /// <param name="target">ボタンコントロール</param>
+            /// <param name="targetKind">ボタン種別</param>
             public CommandUCArgs(CommandButtonUC target, Kind targetKind)
             {
                 Target = target;
                 TargetKind = targetKind;
             }
 
+            /// <summary>
+            /// ボタンコントロール
+            /// </summary>
             public CommandButtonUC Target { get; }
+
+            /// <summary>
+            /// ボタン種別
+            /// </summary>
             public Kind TargetKind { get; }
         }
     }
