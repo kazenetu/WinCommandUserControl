@@ -1231,8 +1231,16 @@ namespace WinCommandUserControlCS.UserControls
             {
                 return;
             }
+
+            // ボタンが有効か確認
+            var button = keyCommandButtonUCMapping[e.KeyCode];
+            if (!button.CommandButton.Visible || !button.CommandButton.Enabled)
+            {
+                return;
+            }
+
             e.SuppressKeyPress = true;
-            ClickEvent(keyCommandButtonUCMapping[e.KeyCode],new EventArgs());
+            ClickEvent(button, new EventArgs());
         }
 
         /// <summary>
